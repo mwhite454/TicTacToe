@@ -38,6 +38,8 @@ function defaultStart(){
   $(".tile").html("").removeClass("occupied");
 }
 
+
+
 /*
  * click on game tile behavior and control
  * if an empty cell is clicked when the game is running and its the human player's turn
@@ -55,6 +57,8 @@ function defaultStart(){
          $( this ).addClass(globals.game.currentState.markClass).addClass("occupied");
          next.advanceTurn();
          globals.game.advanceTo(next);
+     } else if (globals.game.status === "running" && $this.hasClass('occupied')){
+       invalidMoveMessage();
      }
    })
  });
@@ -94,6 +98,13 @@ function showAIDisabled(){
 
 function catWinMessage(){
   $(".gameStatus").html("Cat's game!");
+  $(".messageIcon").removeClass("win").addClass("info");
+  $(".message").addClass("catWin visible").removeClass("hiddenFade start");
+  setTimeout(hideMessage, 3000);
+}
+
+function invalidMoveMessage(){
+  $(".gameStatus").html("You can't go there. <em>That space is already taken!</em>");
   $(".messageIcon").removeClass("win").addClass("info");
   $(".message").addClass("catWin visible").removeClass("hiddenFade start");
   setTimeout(hideMessage, 3000);
