@@ -77,7 +77,7 @@ a {
 .title {
   color: #fff;
   display: inline-block;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
@@ -89,7 +89,7 @@ a {
 .nav {
   background-color: #fff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-  font-family: "Helvetica";
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 13px;
   height: 45px;
   padding: 12px 0 0 24px;
@@ -106,7 +106,7 @@ a {
   padding-top: 88px;
 }
 .rules {
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 .rules h1 {
   color: #2b2c30;
@@ -120,7 +120,7 @@ a {
 }
 .wiki {
   color: #595f66;
-  font-family: "Helvetica";
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 14px;
 }
 .wiki em {
@@ -131,7 +131,7 @@ a {
   border-radius: 2px;
   color: #2b2c30;
   display: block;
-  font-family: "Helvetica";
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 44px;
   height: 44px;
@@ -246,7 +246,7 @@ a {
   border-width: .0833rem;
   border-style: solid;
   color: #fff;
-  font-family: "Helvetica";
+  font-family: "Helvetica", Helvetica, Arial, sans-serif;
   font-size: 13px;
   padding: 8px 16px;
   cursor: pointer;
