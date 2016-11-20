@@ -3,33 +3,86 @@
   <head>
     <meta charset="utf-8">
     <title>title</title>
-    <link rel="stylesheet" href="src/css/style.css">
-    <script src="src/javascript/script.js"></script>
+    <!--<link rel="stylesheet" href="src/css/style.css"> -->
+    <link rel="stylesheet/less" type="text/css" href="src/css/styles.less" />
+
   </head>
   <body>
     <div class="header">
-      <div class="title container">
-        <div class = "row">
-        <em>
-          Tic Tac Toe
-        </em>
+        <div class="row">
+        <div class="title container col-12">
+            Tic Tac Toe
+        </div>
       </div>
-      </div>
-      <div class="nav">
-        <a href="index.html">New Game</a>
+      <div class="row">
+        <div class="nav col-12">
+          <a href="index.html">New Game</a>
+        </div>
       </div>
     </div>
-    <div class="body">
-      <h1>
-        PLAY
-      </h1>
-      <h3>
-        Rules
-      </h3>
+    <div class="body row">
+      <div class="rules col-6">
+        <h1>
+          PLAY
+        </h1>
+        <h3>
+          Rules
+        </h3>
 
-      <p>
-        Tic-tac-toe (or Noughts and crosses, Xs and Os) is a paper-and-pencil game for two players, X and O, who take turns makring the paces in a 3x3 grid. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagnol row wins the game.
-      </p>
+        <p class="wiki">
+          <em>Tic-tac-toe</em> (or <em>Noughts and crosses, Xs and Os</em>) is a paper-and-pencil game for two players, X and O, who take turns marking the spaces in a 3x3 grid. The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the game.
+        </p>
+     </div>
+
+     <div class="game col-6">
+      <div class="message hiddenFade">
+        <span class="messageIcon iconDisplay info"></span>
+        <span class="gameStatus">Shall we play a game?</span>
+        <span class="iconDisplay right dismiss">x</span>
+      </div>
+      <div class="gameboard">
+        <div class="tileRow">
+          <span class="tile" data-indx="0"></span>
+          <span class="tile" data-indx="1"></span>
+          <span class="tile" data-indx="2"></span>
+        </div>
+        <div class="tileRow">
+          <span class="tile" data-indx="3"></span>
+          <span class="tile" data-indx="4"></span>
+          <span class="tile" data-indx="5"></span>
+        </div>
+        <div class="tileRow">
+          <span class="tile" data-indx="6"></span>
+          <span class="tile" data-indx="7"></span>
+          <span class="tile" data-indx="8"></span>
+        </div>
+        <div class="btnWrapper">
+        <button type="submit" value="Reset" class="btn primary">Reset</button>
+      </div>
+      </div>
+     </div>
   </div>
+
+  <!-- set options before less.js script -->
+<script>
+  less = {
+    env: "development",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+  };
+</script>
+<script src="src/javascript/less.min.js"></script>
+<script
+src="https://code.jquery.com/jquery-3.1.1.js"
+integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+crossorigin="anonymous"></script>
+<script src="src/javascript/game.js"></script>
+<script src="src/javascript/ai.js"></script>
+<script src="src/javascript/tictactoe.js"></script>
+
   </body>
 </html>
