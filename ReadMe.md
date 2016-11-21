@@ -18,6 +18,7 @@ Again, the spec did not provide for additional page elements, so I tried to get 
 
 ###Self Awareness Clause
 No code is perfect - these are some things I'd do differently in a refactor.
+* IE compatability - This was built rapidly, on an OSX device. I was able to confirm compatability in Chrome, Safari, and a few mobile devices; however no work has been done to make IE compatable yet.
 * Messaging - I ended up recycling the same functions over and over again for sending messages. An update of this would move messaging to its own object that understands and receives notifications from the game state and then posts the appropriate message without having the same pieces of code hanging out all over the place.
 * Testing - It shouldn't be that difficult to spin up two AI players and let them duke it out. The tutorial that I worked from had completely separate code base for the testing AI though, and I'd like to make it a bit easier to maintain before implementing. It could even be fun to recreate that War Games moment and watch the two AI's dual it out on screen rather than just logging results to a file.
 * CSS positioning - I typically work with [Bootstrap](http://getbootstrap.com) and have clearly gotten spoiled by the grid system. I built the positioning here from scratch just to prove that I could, but feel some of the implementation is hacky at times to try and get things nudged into place.
