@@ -11,7 +11,7 @@ $(document).ready(function(){
   $('html').keyup(function(e){
     if(e.which>=49 && e.which<=57){
       var keyValue = e.which - 48;
-      keyValue = keyValue * 10;
+      keyValue = (keyValue * 10)+5;
       console.log(keyValue);
       showAIMessage(keyValue);
       selectedDifficulty = keyValue;
@@ -70,48 +70,57 @@ function checkOccupied(tile){
 
 function winMessage(player){
   $(".gameStatus").html(player + " won!");
-  $(".messageIcon").removeClass("info").addClass("win");
-  $(".message").addClass("playerWin visible").removeClass("hiddenFade start");
-  setTimeout(hideMessage, 3000);
+  $("#messageIcon").removeClass().addClass("win iconDisplay");
+  $("#messageBar").removeClass().addClass("playerWin visible message");
+  $("#dismissIcon").removeClass().addClass("iconDisplay dismiss winDismiss");
+  hideMessage(4000);
 }
 
 function showAIMessage(probability){
   $(".gameStatus").html("Shall we play a game? <em> Currently set to "+ probability + "% effectiveness.</em>");
-  $(".messageIcon").removeClass("win").addClass("info");
-  $(".message").addClass("aiStart visible").removeClass("hiddenFade start catWin playerWin");
-  setTimeout(hideMessage, 3000);
+  $("#messageIcon").removeClass().addClass("info iconDisplay");
+  $("#messageBar").removeClass().addClass("aiStart visible message");
+  $("#dismissIcon").removeClass().addClass("iconDisplay dismiss aiDismiss");
+  hideMessage(4000);
 }
 
 function showWinRate(){
   $(".gameStatus").html("X Wins: " + winRate[0] + " | O Wins: " + winRate[1] + " | Cat: " + winRate[2]);
-  $(".messageIcon").removeClass("win").addClass("info");
-  $(".message").addClass("aiStart visible").removeClass("hiddenFade start catWin playerWin");
-  setTimeout(hideMessage, 3000);
+  $("#messageIcon").removeClass().addClass("info iconDisplay");
+  $("#messageBar").removeClass().addClass("aiStart visible message");
+  $("#dismissIcon").removeClass().addClass("iconDisplay dismiss aiDismiss");
+  hideMessage(4000);
+
 }
 
 function showAIDisabled(){
   $(".gameStatus").html("AI Disabled.");
-  $(".messageIcon").removeClass("win").addClass("info");
-  $(".message").addClass("aiStart visible").removeClass("hiddenFade start");
-  setTimeout(hideMessage, 3000);
+  $("#messageIcon").removeClass().addClass("info iconDisplay");
+  $("#messageBar").removeClass().addClass("aiStart visible message");
+  $("#dismissIcon").removeClass().addClass("iconDisplay dismiss aiDismiss");
+  hideMessage(4000);
 }
 
 function catWinMessage(){
   $(".gameStatus").html("Cat's game!");
-  $(".messageIcon").removeClass("win").addClass("info");
-  $(".message").addClass("catWin visible").removeClass("hiddenFade start");
-  setTimeout(hideMessage, 3000);
+  $("#messageIcon").removeClass().addClass("info iconDisplay");
+  $("#messageBar").removeClass().addClass("catWin visible message");
+  $("#dismissIcon").removeClass().addClass("iconDisplay dismiss catDismiss");
+  hideMessage(4000);
 }
 
 function invalidMoveMessage(){
   $(".gameStatus").html("You can't go there. <em>That space is already taken!</em>");
-  $(".messageIcon").removeClass("win").addClass("info");
-  $(".message").addClass("catWin visible").removeClass("hiddenFade start");
-  setTimeout(hideMessage, 3000);
+  $("#messageIcon").removeClass().addClass("info iconDisplay");
+  $("#messageBar").removeClass().addClass("catWin visible message");
+  $("#dismissIcon").removeClass().addClass("iconDisplay dismiss winDismiss");
+  hideMessage(4000);
 }
 
-function hideMessage(){
-  $(".message").addClass("hiddenFade").removeClass("visible");
+function hideMessage(n){
+  setTimeout(function(){
+    $(".message").addClass("hiddenFade").removeClass("visible");
+  }, n);
 }
 
 function showGamePiece(){

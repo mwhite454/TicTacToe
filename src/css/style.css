@@ -144,25 +144,25 @@ a {
 .aiStart {
   background-color: rgba(65, 65, 65, 0.3);
 }
-.aiStart .dimiss {
-  color: inherit;
-}
 .aiStart em {
   font-size: 9px;
   font-style: normal;
   font-weight: lighter;
 }
+.aiDismiss {
+  color: inherit;
+}
 .playerWin {
   background-color: #cceba3;
 }
-.playerWin .dimiss {
-  color: rbg(99, 160, 19);
+.winDismiss {
+  color: #63a013;
 }
 .catWin {
   background-color: #bdd9ff;
 }
-.catWin .dimiss {
-  color: rbg(0, 102, 240);
+.catDismiss {
+  color: #0066f0;
 }
 .hidden {
   visibility: hidden;
